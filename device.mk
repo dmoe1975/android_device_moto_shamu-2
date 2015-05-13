@@ -236,6 +236,11 @@ PRODUCT_PACKAGES += \
     lights.shamu \
     android.hardware.light@2.0-impl
 
+#Sound Trigger
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/moto/shamu/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck
