@@ -64,6 +64,9 @@ on fs
     setprop persist.data.df.agg.dl_pkt 10
     setprop persist.data.df.agg.dl_size 4096
 
+    # Themes
+    setprop ro.boot.vendor.overlay.theme com.google.android.theme.pixel
+
 on post-fs-data
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
@@ -214,7 +217,7 @@ on boot
     # add a cpuset for the camera daemon
     # we want all the cores for camera
     mkdir /dev/cpuset/camera-daemon
-	write /dev/cpuset/camera-daemon/mems 0
+    write /dev/cpuset/camera-daemon/mems 0
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
@@ -536,7 +539,7 @@ service mmi-touch-sh /system/bin/init.mmi.touch.sh atmel
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
     disabled
     oneshot
